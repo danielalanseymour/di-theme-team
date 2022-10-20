@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-hover-details',
@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './hover-details.component.html'
 })
 export class HoverDetailsComponent {
-  name = "TEST";
-
-  constructor() {
-  }
+  @Input() detailContext: TemplateRef<any>; // The template that will be used when a row is selected
 }

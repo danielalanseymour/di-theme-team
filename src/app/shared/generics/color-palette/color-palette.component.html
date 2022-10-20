@@ -1,0 +1,32 @@
+<div class="color-palette">
+  <button mat-raised-button
+          [style.background-color]="primary"
+          [style.color]="accent">{{themeName}}</button>
+
+
+  <app-hover-details [detailContext]="primaryDetailContext">
+    <app-color-palette-item [style.background-color]="primary"></app-color-palette-item>
+  </app-hover-details>
+
+  <ng-template #primaryDetailContext>
+    <div class="detailContextContainer">
+      <app-color-palette-item [style.background-color]="primaryLight"></app-color-palette-item>
+      <app-color-palette-item [style.background-color]="primary"></app-color-palette-item>
+      <app-color-palette-item [style.background-color]="primaryDark"></app-color-palette-item>
+    </div>
+  </ng-template>
+
+
+  <app-hover-details [detailContext]="accentDetailContext">
+    <app-color-palette-item [style.background-color]="accent"></app-color-palette-item>
+  </app-hover-details>
+
+  <ng-template #accentDetailContext>
+    <div class="detailContextContainer">
+      <app-color-palette-item [style.background-color]="accentLight"></app-color-palette-item>
+      <app-color-palette-item [style.background-color]="accent"></app-color-palette-item>
+      <app-color-palette-item [style.background-color]="accentDark"></app-color-palette-item>
+    </div>
+  </ng-template>
+
+</div>

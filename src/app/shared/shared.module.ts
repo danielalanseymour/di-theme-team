@@ -6,10 +6,13 @@ import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
 // Generics
 import { HoverDetailsComponent } from './generics';
+import { ColorPaletteComponent, ColorPaletteItemComponent } from './generics/color-palette';
 
 @NgModule({
   declarations: [
-    HoverDetailsComponent
+    ColorPaletteComponent,
+    ColorPaletteItemComponent,
+    HoverDetailsComponent,
   ],
   imports: [
     AngularMaterialModule,
@@ -18,6 +21,8 @@ import { HoverDetailsComponent } from './generics';
   ],
   exports: [
     AngularMaterialModule,
+    ColorPaletteComponent,
+    ColorPaletteItemComponent,
     CommonModule,
     HoverDetailsComponent,
     NgxMaterialTimepickerModule

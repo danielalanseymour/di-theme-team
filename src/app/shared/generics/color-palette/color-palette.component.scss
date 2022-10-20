@@ -1,18 +1,20 @@
-@import '~@angular/material/theming';
-@import '/src/theme.scss';
-@include mat-core();
-
-$test: map-get($theme, primary);
-
 :host {
-  background-color: mat-color($test);
-  border: 3px solid rgb(138, 135, 135);
-  border-radius: 1em;
   display: block;
-  height: 1em;
-  padding: 1em;
-  margin: 1em;
-  width: 1em;
-  -webkit-box-shadow: 0 0 10px mat-color($primary);
-  box-shadow: 0 0 10px mat-color($primary);
+  margin: 1em 0;
+}
+
+.color-palette {
+  display: inline-flex;
+}
+
+:host .color-palette ::ng-deep button {
+  height: 75%;
+  margin: auto 1em auto 0;
+}
+
+.detailContextContainer app-color-palette-item {
+  height: 1mm;
+  padding: 1mm;
+  margin: auto 1mm;
+  width: 1mm;
 }

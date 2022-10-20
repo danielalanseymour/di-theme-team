@@ -1,13 +1,11 @@
 :host {
-  border-bottom: 2px dotted;
   cursor: pointer;
-  padding: 7px;
   position: relative;
 }
 
 :host:hover .tooltip-text {
   opacity: 1;
-  top: -130%;
+  top: -80%;
   visibility: visible;
 }
 
