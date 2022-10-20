@@ -1,6 +1,4 @@
-<div class="content"
-     role="main">
-
+<div ngClass="{{theme}}">
   <mat-sidenav-container>
     <mat-sidenav-content>
       <mat-toolbar color="primary">Garmin Connect</mat-toolbar>
@@ -10,6 +8,9 @@
 
   <div class="workspace-container">
     <router-outlet></router-outlet>
+    <button mat-raised-button
+            color="accent"
+            (click)="chageTheme()">Change Theme</button>
   </div>
   <!--
   <app-nav-bar></app-nav-bar>

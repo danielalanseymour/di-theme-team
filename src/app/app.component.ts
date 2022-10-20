@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'THEME TEAM';
+  theme = '';
+  toggleTheme = false;
+
+  chageTheme(): void {
+    this.theme = this.toggleTheme ? "" : "alternative";
+    this.toggleTheme = !this.toggleTheme;
+  }
+
 }
