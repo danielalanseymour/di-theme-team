@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from 'src/app/shared/generics/nav-bar/nav-bar.component'
 
 
 @Component({
