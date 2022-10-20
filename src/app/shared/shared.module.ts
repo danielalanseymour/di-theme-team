@@ -4,17 +4,22 @@ import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from './modules/angular-material.module';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 
-// Modals
+// Generics
+import { HoverDetailsComponent } from './generics';
 
 @NgModule({
+  declarations: [
+    HoverDetailsComponent
+  ],
   imports: [
-    CommonModule,
     AngularMaterialModule,
+    CommonModule,
     NgxMaterialTimepickerModule
   ],
   exports: [
-    CommonModule,
     AngularMaterialModule,
+    CommonModule,
+    HoverDetailsComponent,
     NgxMaterialTimepickerModule
   ]
 })
