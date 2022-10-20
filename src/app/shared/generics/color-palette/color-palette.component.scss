@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  margin: 1em 0;
+}
+
+.color-palette {
+  display: inline-flex;
+}
+
+:host .color-palette ::ng-deep button {
+  height: 75%;
+  margin: auto 1em auto 0;
+}
+
+.detailContextContainer app-color-palette-item {
+  height: 1mm;
+  padding: 1mm;
+  margin: auto 1mm;
+  width: 1mm;
+}
