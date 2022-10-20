@@ -1,22 +1,14 @@
 @import "../node_modules/@angular/material/theming";
 @include mat-core();
 
-$my-primary: mat-palette($mat-indigo);
-$my-accent: mat-palette($mat-pink);
-
-$my-theme: mat-light-theme($my-primary, $my-accent);
-
-@include angular-material-theme($my-theme);
-
-//   "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
 
 .alternative {
-  $my-primary: mat-palette($mat-amber);
-  $my-accent: mat-palette($mat-light-green);
-
-  $my-theme: mat-light-theme($my-primary, $my-accent);
-
-  @include angular-material-theme($my-theme);
-
+  $primary: mat-palette($mat-amber);
+  $accent: mat-palette($mat-light-green);
+  $theme: mat-light-theme($primary, $accent);
+  @include angular-material-theme($theme);
 }
