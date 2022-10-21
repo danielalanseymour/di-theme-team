@@ -30,6 +30,10 @@ $accent-chocolate: map-get($theme-chocolate, accent);
   box-shadow: 0 0 3px mat-color($accent-chocolate, lighter) !important;
 }
 
+:host ::ng-deep mat-card {
+  width: 75%;
+}
+
 .chocolate-theme :host ::ng-deep mat-card {
   background-color: mat-color($primary-chocolate, lighter);
   color: white;

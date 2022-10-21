@@ -8,30 +8,36 @@
     </mat-sidenav-container>
 
     <div class="workspace-container">
-      <router-outlet></router-outlet>
-      <app-hover-details></app-hover-details>
 
-      <app-color-palette [accent]="'#fff59d'"
-                         [accentDark]="'#cabf45'"
-                         [accentLight]="'#ffffcf'"
-                         [primary]="'#3e2723'"
-                         [primaryDark]="'#1b0000'"
-                         [primaryLight]="'#6a4f4b'"
-                         [themeName]="'Chocolate'"
-                         (themeSelected)="selectTheme('chocolate-theme')"></app-color-palette>
+      <div class="left">
+
+        <h1>Color Options</h1>
+        <div class="color-options">
+          <app-color-palette [accent]="'#fff59d'"
+                             [accentDark]="'#cabf45'"
+                             [accentLight]="'#ffffcf'"
+                             [primary]="'#3e2723'"
+                             [primaryDark]="'#1b0000'"
+                             [primaryLight]="'#6a4f4b'"
+                             [themeName]="'Chocolate'"
+                             (themeSelected)="selectTheme('chocolate-theme')"></app-color-palette>
 
 
-      <app-color-palette [accent]="'#4fc3f7'"
-                         [accentDark]="'#0093c4'"
-                         [accentLight]="'#8bf6ff'"
-                         [primary]="'#212121'"
-                         [primaryDark]="'#000000'"
-                         [primaryLight]="'#484848'"
-                         [themeName]="'Garmin Dark'"
-                         (themeSelected)="selectTheme('dark-theme')"></app-color-palette>
-    </div>
-    <!--
+          <app-color-palette [accent]="'#4fc3f7'"
+                             [accentDark]="'#0093c4'"
+                             [accentLight]="'#8bf6ff'"
+                             [primary]="'#212121'"
+                             [primaryDark]="'#000000'"
+                             [primaryLight]="'#484848'"
+                             [themeName]="'Garmin Dark'"
+                             (themeSelected)="selectTheme('dark-theme')"></app-color-palette>
+        </div>
+      </div>
+      <div class="right">
+        <router-outlet></router-outlet>
+      </div>
+      <!--
   <app-nav-bar></app-nav-bar>
 -->
+    </div>
   </div>
-</div>

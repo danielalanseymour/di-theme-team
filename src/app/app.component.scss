@@ -22,12 +22,30 @@ $accent-chocolate: map-get($theme-chocolate, accent);
 
 .body-content-container.dark-theme {
   background-color: mat-color($primary-dark, darker);
+  color: white;
 }
 
 .body-content-container.chocolate-theme {
   background-color: mat-color($primary-chocolate, lighter);
+  color: white;
 }
 
 .workspace-container {
   margin: 1em 2em;
+  display: flex;
+}
+
+.workspace-container .left {
+  flex: calc(25% - 1em);
+  order: 0;
+  padding-right: 1em;
+}
+
+.workspace-container .right {
+  flex: calc(75% - 1em);
+  order: 1;
+}
+
+.color-options {
+  margin-left: 1em;
 }
