@@ -1,3 +1,50 @@
+@import '~@angular/material/theming';
+@import '/src/theme.scss';
+@include mat-core();
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+$primary-alt: map-get($theme-alt, primary);
+$accent-alt: map-get($theme-alt, accent);
+
+$primary-dark: map-get($theme-dark, primary);
+$accent-dark: map-get($theme-dark, accent);
+
+$primary-chocolate: map-get($theme-chocolate, primary);
+$accent-chocolate: map-get($theme-chocolate, accent);
+
+@mixin shaddow-glow($color, $tone) {
+  -webkit-box-shadow: 0 0 10px mat-color($color, $tone) !important;
+  box-shadow: 0 0 10px mat-color($color, $tone) !important;
+}
+
 :host {
   display: block;
+}
+
+.chocolate-theme :host button {
+  background-color: mat-color($primary-chocolate, darker);
+  color: mat-color($accent-chocolate);
+  -webkit-box-shadow: 0 0 3px mat-color($accent-chocolate, lighter) !important;
+  box-shadow: 0 0 3px mat-color($accent-chocolate, lighter) !important;
+}
+
+.chocolate-theme :host ::ng-deep mat-card {
+  background-color: mat-color($primary-chocolate, lighter);
+  color: white;
+  @include shaddow-glow($accent-chocolate, lighter);
+}
+
+.dark-theme :host button {
+  background-color: mat-color($primary-dark, darker);
+  color: mat-color($accent-dark);
+  -webkit-box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+  box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+}
+
+.dark-theme :host ::ng-deep mat-card {
+  background-color: mat-color($primary-dark, darker);
+  color: white;
+  @include shaddow-glow($accent-dark, default);
 }

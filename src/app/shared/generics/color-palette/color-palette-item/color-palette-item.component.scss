@@ -2,10 +2,26 @@
 @import '/src/theme.scss';
 @include mat-core();
 
-$test: map-get($theme, primary);
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+$primary-alt: map-get($theme-alt, primary);
+$accent-alt: map-get($theme-alt, accent);
+
+$primary-dark: map-get($theme-dark, primary);
+$accent-dark: map-get($theme-dark, accent);
+
+$primary-chocolate: map-get($theme-chocolate, primary);
+$accent-chocolate: map-get($theme-chocolate, accent);
+
+@mixin shaddow-glow($color, $tone) {
+  -webkit-box-shadow: 0 0 10px mat-color($color, $tone);
+  box-shadow: 0 0 10px mat-color($color, $tone);
+}
+
 
 :host {
-  background-color: mat-color($test);
+  background-color: mat-color($primary);
   border: 3px solid rgb(138, 135, 135);
   border-radius: 1em;
   display: inline-block;
@@ -13,6 +29,15 @@ $test: map-get($theme, primary);
   padding: 1em;
   margin: auto 1em;
   width: 1em;
-  -webkit-box-shadow: 0 0 10px mat-color($test);
-  box-shadow: 0 0 10px mat-color($test);
+  @include shaddow-glow($primary, default);
+}
+
+.dark-theme :host {
+  background-color: mat-color($accent-dark, default);
+  @include shaddow-glow($accent-dark, default);
+}
+
+.chocolate-theme :host {
+  background-color: mat-color($primary-chocolate, darker);
+  @include shaddow-glow($primary-chocolate, darker);
 }

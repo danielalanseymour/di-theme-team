@@ -11,11 +11,11 @@ $accent-alt: mat-palette($bv-orange);
 $theme-alt: mat-light-theme($primary-alt, $accent-alt);
 
 $primary-dark: mat-palette($mat-grey, 800, 500, 900);
-$accent-dark: mat-palette($mat-light-blue, 300);
+$accent-dark: mat-palette($mat-light-blue, 300, 50, 600);
 $theme-dark: mat-light-theme($primary-dark, $accent-dark);
 
-$primary-chocolate: mat-palette($mat-brown, 900);
-$accent-chocolate: mat-palette($mat-yellow, 300);
+$primary-chocolate: mat-palette($mat-brown, 800, 500, 900);
+$accent-chocolate: mat-palette($mat-yellow, 300, 50, 600);
 $theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
 
 // Dark Theme https://www.youtube.com/watch?v=r6Ygw9L55zg
