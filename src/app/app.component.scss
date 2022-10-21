@@ -2,37 +2,21 @@
 @import '/src/theme.scss';
 @include mat-core();
 
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
-
-$primary-dark: map-get($theme-dark, primary);
-$accent-dark: map-get($theme-dark, accent);
-
-$primary-chocolate: map-get($theme-chocolate, primary);
-$accent-chocolate: map-get($theme-chocolate, accent);
-
 $primary-light: map-get($theme-light, primary);
 $accent-light: map-get($theme-light, accent);
 
-.body-content-container {
-  background-color: white;
+:host {
   height: 100%;
   width: 100%;
 }
 
-.body-content-container.dark-theme {
-  background-color: mat-color($primary-dark, darker);
-  color: white;
+.body {
+  height: 100%;
 }
 
-.body-content-container.chocolate-theme {
-  background-color: mat-color($primary-chocolate, lighter);
-  color: white;
-}
-
-.body-content-container.light-theme {
-  background-color: mat-color($primary-light, default);
-  color: black;
+.light-theme ::ng-deep mat-toolbar {
+  background-color: mat-color($primary-light, darker);
+  border-bottom: 1px solid mat-color($accent-light, default) !important;
 }
 
 .workspace-container {
