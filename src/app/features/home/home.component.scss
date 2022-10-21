@@ -5,11 +5,14 @@
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
+$primary-chocolate: map-get($theme-chocolate, primary);
+$accent-chocolate: map-get($theme-chocolate, accent);
+
 $primary-dark: map-get($theme-dark, primary);
 $accent-dark: map-get($theme-dark, accent);
 
-$primary-chocolate: map-get($theme-chocolate, primary);
-$accent-chocolate: map-get($theme-chocolate, accent);
+$primary-light: map-get($theme-light, primary);
+$accent-light: map-get($theme-light, accent);
 
 @mixin shaddow-glow($color, $tone) {
   -webkit-box-shadow: 0 0 10px mat-color($color, $tone) !important;
@@ -37,4 +40,11 @@ $accent-chocolate: map-get($theme-chocolate, accent);
   color: mat-color($accent-dark);
   -webkit-box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
   box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+}
+
+.light-theme :host button {
+  background-color: mat-color($primary-light);
+  color: mat-color($accent-light);
+  -webkit-box-shadow: 0 0 3px mat-color($primary-dark, default) !important;
+  box-shadow: 0 0 3px mat-color($accent-dark, default) !important;
 }

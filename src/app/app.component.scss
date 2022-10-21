@@ -11,6 +11,9 @@ $accent-dark: map-get($theme-dark, accent);
 $primary-chocolate: map-get($theme-chocolate, primary);
 $accent-chocolate: map-get($theme-chocolate, accent);
 
+$primary-light: map-get($theme-light, primary);
+$accent-light: map-get($theme-light, accent);
+
 .body-content-container {
   background-color: white;
   height: 100%;
@@ -25,6 +28,11 @@ $accent-chocolate: map-get($theme-chocolate, accent);
 .body-content-container.chocolate-theme {
   background-color: mat-color($primary-chocolate, lighter);
   color: white;
+}
+
+.body-content-container.light-theme {
+  background-color: mat-color($primary-light, default);
+  color: black;
 }
 
 .workspace-container {
