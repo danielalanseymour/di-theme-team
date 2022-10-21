@@ -25,7 +25,7 @@ import { ColorPaletteComponent, ColorPaletteItemComponent } from './generics/col
     ColorPaletteItemComponent,
     CommonModule,
     HoverDetailsComponent,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ]
 })
 export class SharedModule { }
