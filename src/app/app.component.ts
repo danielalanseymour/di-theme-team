@@ -11,6 +11,9 @@ export class AppComponent {
   theme = '';
   toggleTheme = false;
 
+  constructor() {
+  }
+
   chageTheme(): void {
     this.theme = this.toggleTheme ? "" : "alternative";
     this.toggleTheme = !this.toggleTheme;

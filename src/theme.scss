@@ -5,17 +5,11 @@
 $primary: mat-palette($mat-indigo);
 $accent: mat-palette($mat-pink);
 $theme: mat-light-theme($primary, $accent);
-@include angular-material-theme($theme);
 
-.alternative {
-  $primary: mat-palette($bv-brand);
-  $accent: mat-palette($bv-orange);
-  $theme: mat-light-theme($primary, $accent);
-  @include angular-material-theme($theme);
-}
+$primary-alt: mat-palette($bv-brand);
+$accent-alt: mat-palette($bv-orange);
+$theme-alt: mat-light-theme($primary-alt, $accent-alt);
 
-// Dark Theme https://www.youtube.com/watch?v=r6Ygw9L55zg
-// Colors https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FFF176
 $primary-dark: mat-palette($mat-grey, 900);
 $accent-dark: mat-palette($mat-light-blue, 300);
 $theme-dark: mat-light-theme($primary-dark, $accent-dark);
@@ -23,6 +17,16 @@ $theme-dark: mat-light-theme($primary-dark, $accent-dark);
 $primary-chocolate: mat-palette($mat-brown, 900);
 $accent-chocolate: mat-palette($mat-yellow, 300);
 $theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
+
+// Dark Theme https://www.youtube.com/watch?v=r6Ygw9L55zg
+// Colors https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FFF176
+
+
+@include angular-material-theme($theme);
+
+.alternative {
+  @include angular-material-theme($theme-alt);
+}
 
 .chocolate-theme {
   @include angular-material-theme($theme-chocolate);
