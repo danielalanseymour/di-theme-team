@@ -2,14 +2,20 @@
 @import '/src/theme.scss';
 @include mat-core();
 
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
+$theme: global-variable-exists($name: --current-theme);
 
-:host {
-  background-color: mat-color($accent);
+//$primary: map-get($theme, primary);
+//$accent: map-get($theme, accent);
+$primary: global-variable-exists($name: --current-primary);
+$accent: global-variable-exists($name: --current-accent);
+
+.body-content-container {
+  height: 100%;
+  width: 100%;
+  background-color: $accent;
 }
 
 .workspace-container {
-  background-color: mat-color($accent);
+  //background-color: mat-color($accent);
   margin: 1em 2em;
 }
