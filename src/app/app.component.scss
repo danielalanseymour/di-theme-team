@@ -5,6 +5,11 @@
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
+.body-content-container {
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+}
 
 .workspace-container {
   //background-color: mat-color($accent);
