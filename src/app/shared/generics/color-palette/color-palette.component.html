@@ -1,8 +1,8 @@
 <div class="color-palette">
   <button mat-raised-button
           (click)="selectColor()"
-          [style.background-color]="primary"
-          [style.color]="accent">{{themeName}}</button>
+          [style.background-color]="buttonBackgroundColor"
+          [style.color]="buttonColor">{{themeName}}</button>
 
 
   <app-hover-details [detailContext]="primaryDetailContext">
