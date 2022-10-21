@@ -10,7 +10,7 @@ $primary-alt: mat-palette($bv-brand);
 $accent-alt: mat-palette($bv-orange);
 $theme-alt: mat-light-theme($primary-alt, $accent-alt);
 
-$primary-dark: mat-palette($mat-grey, 900);
+$primary-dark: mat-palette($mat-grey, 800, 500, 900);
 $accent-dark: mat-palette($mat-light-blue, 300);
 $theme-dark: mat-light-theme($primary-dark, $accent-dark);
 

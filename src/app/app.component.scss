@@ -2,20 +2,32 @@
 @import '/src/theme.scss';
 @include mat-core();
 
-$theme: global-variable-exists($name: --current-theme);
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
 
-//$primary: map-get($theme, primary);
-//$accent: map-get($theme, accent);
-$primary: global-variable-exists($name: --current-primary);
-$accent: global-variable-exists($name: --current-accent);
+$primary-alt: map-get($theme-alt, primary);
+$accent-alt: map-get($theme-alt, accent);
+
+$primary-dark: map-get($theme-dark, primary);
+$accent-dark: map-get($theme-dark, accent);
+
+$primary-chocolate: map-get($theme-chocolate, primary);
+$accent-chocolate: map-get($theme-chocolate, accent);
 
 .body-content-container {
+  background-color: white;
   height: 100%;
   width: 100%;
-  background-color: $accent;
+}
+
+.body-content-container.dark-theme {
+  background-color: mat-color($primary-dark, darker);
+}
+
+.body-content-container.chocolate-theme {
+  background-color: mat-color($primary-chocolate, lighter);
 }
 
 .workspace-container {
-  //background-color: mat-color($accent);
   margin: 1em 2em;
 }
