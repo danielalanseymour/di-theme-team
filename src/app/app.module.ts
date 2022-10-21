@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 // Imports
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ColorPickerModule } from 'ngx-color-picker';
 
 
 @NgModule({
@@ -19,9 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ColorPickerModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

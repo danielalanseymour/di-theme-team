@@ -58,6 +58,20 @@
                              (themeSelected)="selectTheme('light-theme')"></app-color-palette>
 
         </div>
+
+        <div>
+          <mat-card>
+            <div>
+              <!-- Color Palette-->
+              <app-color-palette-item [(colorPicker)]="primaryColor"
+                                      [style.background-color]="primaryColor"></app-color-palette-item>
+              <app-color-palette-item [(colorPicker)]="accentColor"
+                                      [style.background-color]="accentColor"></app-color-palette-item>
+            </div>
+            <button mat-raised-button> Select Theme</button>
+          </mat-card>
+        </div>
+
       </div>
       <div class="right">
         <router-outlet></router-outlet>

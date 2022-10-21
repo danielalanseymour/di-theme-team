@@ -55,6 +55,12 @@ $theme-light: mat-light-theme($primary-light, $accent-light);
   @include shaddow-glow($accent-dark, default);
 }
 
+:host .dark-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-dark, darker);
+  color: white;
+  @include shaddow-glow($accent-dark, default);
+}
+
 // ------------------------------------------------------------------------------------ Default
 .default-theme ::ng-deep mat-card {
   background-color: mat-color($primary, lighter);
