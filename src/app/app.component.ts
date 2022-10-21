@@ -13,6 +13,7 @@ export class AppComponent {
   theme = '';
   toggleTheme = false;
 
+  addCustomColor = false;
   colorForm: FormGroup;
   disabled: false;
   touchUi = false;
@@ -39,5 +40,9 @@ export class AppComponent {
   }
   selectTheme(className: string): void {
     this.theme = className;
+  }
+
+  toggleCustomColor() {
+    this.addCustomColor = !this.addCustomColor;
   }
 }

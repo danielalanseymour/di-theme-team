@@ -16,8 +16,8 @@
           <app-color-palette [accent]="'#ec407a'"
                              [accentDark]="'#c2185b'"
                              [accentLight]="'#f8bbd0'"
-                             [buttonColor]="'black'"
-                             [buttonBackgroundColor]="'#ec407a'"
+                             [buttonColor]="'ec407a'"
+                             [buttonBackgroundColor]="'#3949ab'"
                              [primary]="'#3949ab'"
                              [primaryDark]="'#1a237e'"
                              [primaryLight]="'#9fa8da'"
@@ -57,18 +57,30 @@
                              [themeName]="'Garmin Light'"
                              (themeSelected)="selectTheme('light-theme')"></app-color-palette>
 
+          <button mat-raised-button
+                  (click)="toggleCustomColor()"
+                  color="accent"
+                  [style.width]="'8em'">Custom Color</button>
+
         </div>
 
-        <div>
-          <mat-card>
-            <div>
-              <!-- Color Palette-->
-              <app-color-palette-item [(colorPicker)]="primaryColor"
-                                      [style.background-color]="primaryColor"></app-color-palette-item>
-              <app-color-palette-item [(colorPicker)]="accentColor"
-                                      [style.background-color]="accentColor"></app-color-palette-item>
+        <div *ngIf="addCustomColor">
+          <mat-card class="bug">
+
+            <div class="custom-theme">
+              <div class="custom-theme-primary">
+                <app-color-palette-item [(colorPicker)]="primaryColor"
+                                        [style.background-color]="primaryColor"></app-color-palette-item>
+              </div>
+              <div class="custom-theme-accent">
+                <app-color-palette-item [(colorPicker)]="accentColor"
+                                        [style.background-color]="accentColor"></app-color-palette-item>
+              </div>
+              <div class="custom-theme-save">
+                <button mat-raised-button
+                        color="accent">Add Custom Color</button>
+              </div>
             </div>
-            <button mat-raised-button> Select Theme</button>
           </mat-card>
         </div>
 

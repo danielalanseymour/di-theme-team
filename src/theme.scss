@@ -36,7 +36,15 @@ $theme-light: mat-light-theme($primary-light, $accent-light);
   @include angular-material-theme($theme-chocolate);
 }
 
-.chocolate-theme ::ng-deep mat-card {
+.chocolate-theme .bug button {
+  background-color: mat-color($primary-chocolate, darker);
+  color: mat-color($accent-chocolate);
+  -webkit-box-shadow: 0 0 3px mat-color($accent-chocolate, lighter) !important;
+  box-shadow: 0 0 3px mat-color($accent-chocolate, lighter) !important;
+}
+
+.chocolate-theme ::ng-deep mat-card,
+.chocolate-theme .bug {
   background-color: mat-color($primary-chocolate, lighter);
   color: white;
   @include shaddow-glow($accent-chocolate, lighter);
@@ -49,20 +57,23 @@ $theme-light: mat-light-theme($primary-light, $accent-light);
   @include angular-material-theme($theme-dark);
 }
 
-.dark-theme ::ng-deep mat-card {
+.dark-theme ::ng-deep mat-card,
+.dark-theme .bug {
   background-color: mat-color($primary-dark, darker);
-  color: white;
+  color: white !important;
   @include shaddow-glow($accent-dark, default);
 }
 
-:host .dark-theme ::ng-deep mat-card {
+.dark-theme button {
   background-color: mat-color($primary-dark, darker);
-  color: white;
-  @include shaddow-glow($accent-dark, default);
+  color: mat-color($accent-dark);
+  -webkit-box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+  box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
 }
 
 // ------------------------------------------------------------------------------------ Default
-.default-theme ::ng-deep mat-card {
+.default-theme ::ng-deep mat-card,
+.default-theme .bug {
   background-color: mat-color($primary, lighter);
   @include shaddow-glow($accent, lighter);
 }
@@ -74,11 +85,18 @@ $theme-light: mat-light-theme($primary-light, $accent-light);
   @include angular-material-theme($theme-light);
 }
 
-
-.light-theme ::ng-deep mat-card {
+.light-theme ::ng-deep mat-card,
+.light-theme .bug {
   background-color: mat-color($primary-light, default);
   color: black;
   @include shaddow-glow($accent-light, default);
+}
+
+.light-theme button {
+  background-color: mat-color($primary-light);
+  color: mat-color($accent-light);
+  -webkit-box-shadow: 0 0 3px mat-color($primary-dark, default);
+  box-shadow: 0 0 3px mat-color($accent-dark, default);
 }
 
 .light-theme ::ng-deep mat-toolbar {
