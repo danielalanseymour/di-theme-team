@@ -1,3 +1,21 @@
+@import '~@angular/material/theming';
+@import '/src/theme.scss';
+@include mat-core();
+
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+
+$primary-dark: map-get($theme-dark, primary);
+$accent-dark: map-get($theme-dark, accent);
+
+$primary-chocolate: map-get($theme-chocolate, primary);
+$accent-chocolate: map-get($theme-chocolate, accent);
+
+@mixin shaddow-glow($color, $tone) {
+  -webkit-box-shadow: 0 0 10px mat-color($color, $tone);
+  box-shadow: 0 0 10px mat-color($color, $tone);
+}
+
 :host {
   display: block;
   margin: 1em 0;
@@ -12,6 +30,25 @@
   margin: auto 1em auto 0;
   width: 8em;
 }
+
+.chocolate-theme :host .color-palette button {
+  -webkit-box-shadow: 0 0 5px mat-color($accent-chocolate, lighter);
+  box-shadow: 0 0 5px mat-color($accent-chocolate, lighter);
+}
+
+.chocolate-theme :host .color-palette button:hover {
+  @include shaddow-glow($accent-chocolate, default);
+}
+
+.dark-theme :host .color-palette button {
+  -webkit-box-shadow: 0 0 3px white;
+  box-shadow: 0 0 3px white;
+}
+
+.dark-theme :host .color-palette button:hover {
+  @include shaddow-glow($accent-dark, default);
+}
+
 
 .detailContextContainer app-color-palette-item {
   height: 1mm;

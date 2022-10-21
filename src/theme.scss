@@ -2,21 +2,21 @@
 @import './palettes.scss';
 @include mat-core();
 
-$primary: mat-palette($mat-indigo);
-$accent: mat-palette($mat-pink);
+$primary: mat-palette($mat-indigo, 600, 200, 900);
+$accent: mat-palette($mat-pink, 400, 100, 700);
 $theme: mat-light-theme($primary, $accent);
 
-$primary-alt: mat-palette($bv-brand);
-$accent-alt: mat-palette($bv-orange);
-$theme-alt: mat-light-theme($primary-alt, $accent-alt);
+$primary-chocolate: mat-palette($mat-brown, 800, 500, 900);
+$accent-chocolate: mat-palette($mat-yellow, 300, 50, 600);
+$theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
 
 $primary-dark: mat-palette($mat-grey, 800, 500, 900);
-$accent-dark: mat-palette($mat-light-blue, 300);
+$accent-dark: mat-palette($mat-light-blue, 300, 50, 600);
 $theme-dark: mat-light-theme($primary-dark, $accent-dark);
 
-$primary-chocolate: mat-palette($mat-brown, 900);
-$accent-chocolate: mat-palette($mat-yellow, 300);
-$theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
+$primary-light: mat-palette($white, 50, 200, 500);
+$accent-light: mat-palette($mat-light-blue, 300, 50, 600);
+$theme-light: mat-light-theme($primary-light, $accent-light);
 
 // Dark Theme https://www.youtube.com/watch?v=r6Ygw9L55zg
 // Colors https://m2.material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=FFF176
@@ -24,14 +24,58 @@ $theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
 
 @include angular-material-theme($theme);
 
-.alternative {
-  @include angular-material-theme($theme-alt);
+@mixin shaddow-glow($color, $tone) {
+  -webkit-box-shadow: 0 0 10px mat-color($color, $tone) !important;
+  box-shadow: 0 0 10px mat-color($color, $tone) !important;
 }
 
+// ------------------------------------------------------------------------------------ Chocolate
 .chocolate-theme {
+  background-color: mat-color($primary-chocolate, lighter);
+  color: white;
   @include angular-material-theme($theme-chocolate);
 }
 
+.chocolate-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-chocolate, lighter);
+  color: white;
+  @include shaddow-glow($accent-chocolate, lighter);
+}
+
+// ------------------------------------------------------------------------------------ Dark
 .dark-theme {
+  background-color: mat-color($primary-dark, darker);
+  color: white;
   @include angular-material-theme($theme-dark);
+}
+
+.dark-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-dark, darker);
+  color: white;
+  @include shaddow-glow($accent-dark, default);
+}
+
+// ------------------------------------------------------------------------------------ Default
+.default-theme ::ng-deep mat-card {
+  background-color: mat-color($primary, lighter);
+  @include shaddow-glow($accent, lighter);
+}
+
+// ------------------------------------------------------------------------------------ Light
+.light-theme {
+  background-color: mat-color($primary-light, default);
+  color: black;
+  @include angular-material-theme($theme-light);
+}
+
+
+.light-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-light, default);
+  color: black;
+  @include shaddow-glow($accent-light, default);
+}
+
+.light-theme ::ng-deep mat-toolbar {
+  background-color: mat-color($primary-light, darker);
+  border-bottom: 1px solid mat-color($accent-light, default) !important;
 }
