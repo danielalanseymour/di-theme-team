@@ -2,13 +2,9 @@
 @import './palettes.scss';
 @include mat-core();
 
-$primary: mat-palette($mat-indigo);
-$accent: mat-palette($mat-pink);
+$primary: mat-palette($mat-indigo, 600, 200, 900);
+$accent: mat-palette($mat-pink, 400, 100, 700);
 $theme: mat-light-theme($primary, $accent);
-
-$primary-alt: mat-palette($bv-brand);
-$accent-alt: mat-palette($bv-orange);
-$theme-alt: mat-light-theme($primary-alt, $accent-alt);
 
 $primary-dark: mat-palette($mat-grey, 800, 500, 900);
 $accent-dark: mat-palette($mat-light-blue, 300, 50, 600);
@@ -24,8 +20,9 @@ $theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
 
 @include angular-material-theme($theme);
 
-.alternative {
-  @include angular-material-theme($theme-alt);
+@mixin shaddow-glow($color, $tone) {
+  -webkit-box-shadow: 0 0 10px mat-color($color, $tone) !important;
+  box-shadow: 0 0 10px mat-color($color, $tone) !important;
 }
 
 .chocolate-theme {
@@ -34,4 +31,28 @@ $theme-chocolate: mat-light-theme($primary-chocolate, $accent-chocolate);
 
 .dark-theme {
   @include angular-material-theme($theme-dark);
+}
+
+.chocolate-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-chocolate, lighter);
+  color: white;
+  @include shaddow-glow($accent-chocolate, lighter);
+}
+
+.dark-theme button {
+  background-color: mat-color($primary-dark, darker);
+  color: mat-color($accent-dark);
+  -webkit-box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+  box-shadow: 0 0 3px mat-color($accent-dark, lighter) !important;
+}
+
+.dark-theme ::ng-deep mat-card {
+  background-color: mat-color($primary-dark, darker);
+  color: white;
+  @include shaddow-glow($accent-dark, default);
+}
+
+.default-theme ::ng-deep mat-card {
+  background-color: mat-color($primary, lighter);
+  @include shaddow-glow($accent, lighter);
 }
