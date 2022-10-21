@@ -16,4 +16,7 @@ export class AppComponent {
     this.toggleTheme = !this.toggleTheme;
   }
 
+  selectTheme(className: string): void {
+    this.theme = className;
+  }
 }

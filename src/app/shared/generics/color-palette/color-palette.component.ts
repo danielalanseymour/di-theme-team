@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-color-palette',
@@ -14,6 +14,11 @@ export class ColorPaletteComponent {
   @Input() primaryLight: string = "#6a4f4b";
   @Input() themeName = "Chocolate";
 
-  constructor() {
+
+  @Output() themeSelected = new EventEmitter<void>();
+
+  selectColor(): void {
+    console.log('selectColor()');
+    this.themeSelected.emit();
   }
 }

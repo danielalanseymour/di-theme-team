@@ -5,11 +5,8 @@
 $primary: map-get($theme, primary);
 $accent: map-get($theme, accent);
 
-:host {
-  background-color: mat-color($accent);
-}
 
 .workspace-container {
-  background-color: mat-color($accent);
+  //background-color: mat-color($accent);
   margin: 1em 2em;
 }
